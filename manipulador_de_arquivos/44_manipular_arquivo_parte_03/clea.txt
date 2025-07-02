@@ -1,0 +1,1 @@
+& C:/Users/ead/AppData/Local/Programs/Python/Python313/python.exe c:/Users/ead/python_developer_qua491006/manipulador_de_arquivos/46_manipular_arquivo_parte05/main.py

@@ -1,0 +1,3 @@
+Este texto será lido por um programa feito na linguagem python por mim.
+Este aqui é um novo texto 
+Eu sou eu que é eu 
