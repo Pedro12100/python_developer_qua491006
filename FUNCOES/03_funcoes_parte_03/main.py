@@ -1,5 +1,5 @@
 # importa módulo
-import modulo as m
+import pedro as m
 
 
 # algoritmo principal
