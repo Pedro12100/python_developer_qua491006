@@ -1,17 +1,27 @@
-import classes as c 
+import classes as c
 
 def main():
-    # instancia objeto da classe conta
-    cc = c.ContaCorrente(titular="", cpf="", agencia="1010-1", conta="10101-1", saldo=0.0)
+    # Instancia objeto da classe ContaCorrente
+    cc = c.ContaCorrente(
+        titular="João Silva",
+        cpf="123.456.789-00",
+        agencia="1010-1",
+        numero_conta="10101-1",
+        saldo=0.0
+    )
 
-    print(f"Saldo: R$ {cc.saldo}")
+    print(f"Saldo inicial: R$ {cc.saldo:.2f}")
+    
+    cc.consultar_dados()
 
+    cc.depositar(100)
+    print(f"Saldo após depósito: R$ {cc.saldo:.2f}")
 
-# TODO continue com a construção do programa. 
+    cc.sacar(50)
+    print(f"Saldo após saque: R$ {cc.saldo:.2f}")
 
 if __name__ == "__main__":
     main()
-
 
 
 
