@@ -2,12 +2,13 @@ import pyautogui as auto
 
 
 def main():
-    auto.PAUSE = 0.5
     auto.press("win")
     auto.write("Bloco de notas")
     auto.press("Enter")
-    auto.PAUSE = 0.5
-    auto.write("Deu bom sgboadghasgvspgvihapgjhpagjhpaghapghjaspibskbhnspbhjsipghspoibwshbosihbpisbhps")
+    auto.sleep(1)  
+    auto.write("Guilherme tem medo de mulher e do seu proprio carro")
+    auto.sleep(2)
+   
    
     
 
