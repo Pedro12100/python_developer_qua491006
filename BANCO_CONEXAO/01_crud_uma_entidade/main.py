@@ -1,50 +1,48 @@
-from sqlalchemy import create_engine, Column, Integer, String, Date
+# importa a biblioteca sqlalchemy
+from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
-from datetime import datetime
-import arquivo as ar
-
-Base = declarative_base()
-
-class Pessoa(Base):
-    __tablename__ = "pessoa"
-    id_pessoa = Column(Integer, primary_key=True, autoincrement=True)
-    nome = Column(String, nullable=False)
-    email = Column(String, nullable=False, unique=True)
-    data_nascimento = Column(Date, nullable=False)
-
-def criar_tb_pessoa(engine):
-    try:
-        Base.metadata.create_all(engine)
-    except Exception as e:
-        print(f"Não foi possível conectar ao banco. {e}")
+import entidade as ent
+import modulo as md
 
 def main():
     engine = create_engine("sqlite:///01_crud_uma_entidade/database/db_crud.db")
-    criar_tb_pessoa(engine)
-
+    Base = declarative_base()
+    Pessoa = ent.criar_tb_pessoa(engine, Base)
     Session = sessionmaker(bind=engine)
     session = Session()
 
+    md.limpar()
     while True:
-        print(f"{'-'*20} CRUD {'-'*20}")
+        print(f"{'-'*20} CRUD DA SERPENTE {'-'*20}")
         print("1 - Cadastrar nova pessoa")
         print("2 - Listar pessoas")
-        print("3 - Alterar dados de uma pessoa")
-        print("4 - Excluir uma pessoa")
-        print("5 - Sair do programa")
+        print("3 - Pesquisar pessoas")
+        print("4 - Alterar dados de uma pessoa")
+        print("5 - Excluir uma pessoa")
+        print("6 - Exportar dados para Excel")
+        print("7 - Sair do programa")
         opcao = input("Informe a opção desejada: ").strip()
-        ar.limpar()
-
+        md.limpar()
         match opcao:
             case "1":
-                ar.cadastrar_pessoa(session, Pessoa)
+                md.cadastrar_pessoa(session, Pessoa)
+                continue
             case "2":
-                ar.listar_pessoas(session, Pessoa)
+                md.listar_pessoas(session, Pessoa)
+                continue
             case "3":
-                ar.pesquisar_pessoa(session, Pessoa)
+                md.pesquisar_pessoas(session, Pessoa)
+                continue
             case "4":
-                print("Funcionalidade ainda não implementada.")
+                md.alterar_dados(session, Pessoa)
+                continue
             case "5":
+                md.excluir_pessoa(session, Pessoa)
+                continue
+            case "6":
+                md.exportar_excel(session, Pessoa)
+                continue
+            case "7":
                 print("Programa encerrado.")
                 break
             case _:
