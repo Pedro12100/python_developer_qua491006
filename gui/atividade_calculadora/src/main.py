@@ -67,7 +67,7 @@ def main(page: ft.Page):
                     DigitarBotao(text="7", resultado=resultado),
                     DigitarBotao(text="8", resultado=resultado),
                     DigitarBotao(text="9", resultado=resultado),
-                    AcaoBotao(text="x", resultado=resultado),
+                    AcaoBotao(text="*", resultado=resultado),
                 ]
             ),
             ft.Row(
@@ -99,7 +99,6 @@ def main(page: ft.Page):
     page.add(
         ft.Container(
             width=350,
-            bgcolor=ft.Colors.BLACK,
             border_radius=ft.border_radius.all(20),
             padding=20,
             content=content,
