@@ -1,6 +1,6 @@
 import flet as ft
 
-# Classe de cada tarefa individual
+
 class Task(ft.Column):
     def __init__(self, task_name, task_status_change, task_delete):
         super().__init__()
@@ -9,14 +9,14 @@ class Task(ft.Column):
         self.task_status_change = task_status_change
         self.task_delete = task_delete
 
-        # Checkbox da tarefa
+ 
         self.display_task = ft.Checkbox(
             value=False,
             label=self.task_name,
             on_change=self.status_changed
         )
 
-        # Layout da tarefa: checkbox + botão de excluir
+     
         self.controls = [
             ft.Row(
                 alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
@@ -31,17 +31,14 @@ class Task(ft.Column):
             )
         ]
 
-    # Marca/desmarca como concluída
     def status_changed(self, e):
         self.completed = self.display_task.value
         self.task_status_change()
 
-    # Exclui a tarefa
+
     def delete_clicked(self, e):
         self.task_delete(self)
 
-
-# Classe principal da lista de tarefas
 class TodoApp(ft.Column):
     def __init__(self):
         super().__init__()
@@ -49,7 +46,6 @@ class TodoApp(ft.Column):
         self.tasks = ft.Column()
         self.items_left = ft.Text("0 tarefas ativas")
 
-        # Abas de filtro
         self.filter = ft.Tabs(
             selected_index=0,
             on_change=self.tabs_changed,
@@ -60,11 +56,10 @@ class TodoApp(ft.Column):
             ],
         )
 
-        # Layout principal
         self.width = 600
         self.controls = [
             ft.Row(
-                [ft.Text(value="To-do APP", theme_style=ft.TextThemeStyle.HEADLINE_MEDIUM)],
+                [ft.Text(value="Atividades Pessoais", theme_style=ft.TextThemeStyle.HEADLINE_MEDIUM)],
                 alignment=ft.MainAxisAlignment.CENTER,
             ),
             ft.Row(
@@ -95,7 +90,7 @@ class TodoApp(ft.Column):
             ),
         ]
 
-    # Adicionar tarefa
+  
     def add_clicked(self, e):
         if self.new_task.value and self.new_task.value.strip():
             task = Task(self.new_task.value.strip(), self.task_status_change, self.task_delete)
@@ -111,7 +106,6 @@ class TodoApp(ft.Column):
         except ValueError:
             pass
 
-    # Atualiza filtro e contador
     def before_update(self):
         status = self.filter.tabs[self.filter.selected_index].text
         count = 0
@@ -137,9 +131,8 @@ class TodoApp(ft.Column):
                 self.task_delete(task)
 
 
-# Função principal (página)
 def main(page: ft.Page):
-    page.title = "To-Do App"
+    page.title = "To-do "
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
     todo = TodoApp()
