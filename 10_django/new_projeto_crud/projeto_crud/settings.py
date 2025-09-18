@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-s70qcr9^qbpr&2=5)@1=bzr6t588^1anocvt)j$11@k@++dlq('
+SECRET_KEY = 'django-insecure-_t%$et!t2c0e8s=lmp0p)-t&^zr794yuc$l6zppjnbn3r^sb1w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -77,7 +77,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db_crud.db',
-        # pip install mysqlclient
     }
 }
 
