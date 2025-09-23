@@ -6,14 +6,22 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
     <title>CRUD Django</title>
+=======
+    <title>Bootstrap demo</title>
+>>>>>>> a4e35f3e5af471a8141c901b06f799f79ccedde5
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body class="bg-dark" data-bs-theme="dark">
     <!-- navbar -->
+<<<<<<< HEAD
     <nav class="navbar navbar-expand-lg mb-5" data-bs-theme="dark" style="background-color: #16161d; box-shadow: 10px 0px 15px #16161d;">
+=======
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark" style="background-color: #16161d; box-shadow: 10px 0px 15px #16161d;">
+>>>>>>> a4e35f3e5af471a8141c901b06f799f79ccedde5
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="{% static 'img/icone.png' %}" alt="Ícone" style="margin: -10px 0px;" />
@@ -29,7 +37,11 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
+<<<<<<< HEAD
                         <a class="nav-link" href="/crud_app/cadastro">Cadastrar pessoa</a>
+=======
+                        <a class="nav-link" href="crud_app/cadastro">Cadastrar pessoa</a>
+>>>>>>> a4e35f3e5af471a8141c901b06f799f79ccedde5
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -53,8 +65,11 @@
                     <b>Nome: </b>{{ pessoa.nome }} |
                     <b>E-mail: </b>{{ pessoa.email }} |
                     <b>CPF: </b>{{ pessoa.cpf }}
+<<<<<<< HEAD
                     <a href="{% url 'alterar_pessoa' pessoa.id_pessoa%}">Alterar</a>
                     <a href="% url 'deletar_pessoa' pessoa.id_pessoa%">Excluir</a>
+=======
+>>>>>>> a4e35f3e5af471a8141c901b06f799f79ccedde5
                 </li>
             {% empty %}
                 <li>Nenhuma pessoa cadastrada</li>
